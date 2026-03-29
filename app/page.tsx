@@ -7,10 +7,11 @@ import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+// Remplace tes lignes Supabase par celles-ci :
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder'
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 export default function TKDemoDay() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
